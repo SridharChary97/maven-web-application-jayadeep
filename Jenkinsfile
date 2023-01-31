@@ -25,15 +25,14 @@ stages{
 	
 	}
   }
-}
-}
-/*
-  stage('Build'){
+
+  stage('Buildm'){
     steps{
-      sh 'mvn clean package'
+    sh 'mvn clean package'
   }
   }
-	
+}
+}
 	*/
 /*
  stage('ExecuteSonarQubeReport'){
