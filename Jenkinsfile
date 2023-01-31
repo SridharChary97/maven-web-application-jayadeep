@@ -4,8 +4,6 @@ agent any
 
 tool name: 'maven-3.8.6', type: 'maven'
 
-}
-
 /* triggers{
 pollSCM('* * * * *')
 }
