@@ -21,11 +21,10 @@ buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', 
 stages{
   stage('CheckOutCode'){
     steps{
-    git branch: 'master', git credentialsId: 'Git', url: 'https://github.com/SridharChary97/maven-web-application-jayadeep.git'
+    git credentialsId: 'Git', url: 'https://github.com/SridharChary97/maven-web-application-jayadeep.git'
 	
 	}
   }
-  
   stage('Build'){
     steps{
     sh  "mvn clean package"
