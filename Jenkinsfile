@@ -27,8 +27,10 @@ stages{
   }
 
   stage('Buildm'){
-    steps{
-    sh 'mvn package'
+    steps {
+        withMaven(maven : 'maven-3.8.7') {
+            bat'mvn clean package'
+    }
   }
   }
 }
