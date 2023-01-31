@@ -7,7 +7,7 @@ maven 'maven-3.8.6'
 
 }
 
-triggers{
+/* triggers{
 pollSCM('* * * * *')
 }
 
@@ -15,9 +15,10 @@ options{
 timestamps()
 buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
 }
+*/
 
+	
 stages{
-
   stage('CheckOutCode'){
     steps{
     git branch: 'master', git credentialsId: 'Git', url: 'https://github.com/SridharChary97/maven-web-application-jayadeep.git'
@@ -26,10 +27,12 @@ stages{
   }
   
   stage('Build'){
-  steps{
-  sh  "mvn clean package"
+    steps{
+    sh  "mvn clean package"
   }
   }
+	
+	
 /*
  stage('ExecuteSonarQubeReport'){
   steps{
@@ -51,7 +54,7 @@ stages{
   }
   }
   */
-}//Stages Closing
+} 
 /*
 post{
 
@@ -72,5 +75,5 @@ post{
 }
 
 */
+} //pipeline closing
 	
-}  //Pipeline closing
