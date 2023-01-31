@@ -28,7 +28,7 @@ stages{
 
   stage('Buildm'){
     steps{
-    sh 'mvn clean package'
+    sh script: 'mvn clean package'
   }
   }
 }
