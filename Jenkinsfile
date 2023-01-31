@@ -28,12 +28,10 @@ stages{
 
   stage('Buildm'){
     steps {
-        withMaven(maven : 'maven-3.8.7') {
-            bat'mvn clean package'
+        bat 'mvn clean package'
     }
   }
   }
-}
 }
 /*
  stage('ExecuteSonarQubeReport'){
