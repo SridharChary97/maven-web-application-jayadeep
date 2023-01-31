@@ -33,7 +33,6 @@ stages{
   }
 }
 }
-	*/
 /*
  stage('ExecuteSonarQubeReport'){
   steps{
