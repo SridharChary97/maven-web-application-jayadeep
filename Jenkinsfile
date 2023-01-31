@@ -2,7 +2,10 @@ pipeline{
 
 agent any
 
-tool name: 'maven-3.8.6', type: 'maven'
+tools {
+  maven 'maven-3.8.6'
+}
+
 
 /* triggers{
 pollSCM('* * * * *')
@@ -18,13 +21,13 @@ buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', 
 stages{
   stage('CheckOutCode'){
     steps{
-    git credentialsId: 'Git', url: 'https://github.com/SridharChary97/maven-web-application-jayadeep.git'
+      git credentialsId: 'Git', url: 'https://github.com/SridharChary97/maven-web-application-jayadeep.git'
 	
 	}
   }
   stage('Build'){
     steps{
-    sh  "mvn clean package"
+      sh 'mvn clean package'
   }
   }
 	
